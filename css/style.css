@@ -1,0 +1,549 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* ---------- Profile Page Spacing ---------- */
+.page-body.no-banner .content-wrapper {
+    margin-top: 0 !important;
+    padding-top: 20px;
+}
+
+/* ---------- Profile Image ---------- */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #eee;
+}
+
+/* ---------- Content Wrapper ---------- */
+.content-wrapper {
+    flex-grow: 1;
+    padding: 116px 20px 20px; /* Add top padding for fixed header + navbar (desktop) */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Override for home page to remove top padding (carousel directly below navbar) */
+.home-container .content-wrapper {
+    padding-top: 0 !important;
+}
+
+/* ---------- Sections ---------- */
+.announcement-section,
+.contact-section,
+.news-section {
+    background-color: #f1f5f9;
+    padding: 80px 0 40px;
+    margin-bottom: 0 !important;
+    width: 100%;
+}
+
+/* ---------- Cards ---------- */
+.announcement-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.announcement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.article-card {
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+}
+
+.story-link {
+    display: block;
+    padding: 8px 0;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.story-link:hover,
+.story-link.active {
+    color: #3b82f6 !important;
+    font-weight: 600;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form .form-control {
+    border-radius: 8px;
+}
+
+.privacy-note {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+/* ---------- Job Card Styles ---------- */
+.job-card {
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.job-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.job-card-info h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+.job-card-info p {
+    margin: 2px 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.job-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.job-card-actions .btn {
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+.job-details {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 16px;
+}
+
+.job-details h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.job-details p {
+    color: #6b7280;
+    font-size: 1rem;
+    margin: 4px 0;
+}
+
+.job-details .job-meta {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+/* ---------- Alumni Directory Styles ---------- */
+.directory-container {
+    padding: 20px;
+}
+
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    padding: 8px;
+    width: 250px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #2563eb;
+}
+
+.alumni-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.alumni-card {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alumni-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.alumni-actions {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.alumni-actions button,
+.alumni-actions a {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.alumni-actions button:hover,
+.alumni-actions a:hover {
+    background-color: #2563eb;
+}
+
+/* ---------- Reward Card Styles ---------- */
+.reward-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ---------- FAB Styles ---------- */
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+.fab-container .main-fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 101;
+}
+
+.fab-container .main-fab:hover {
+    transform: scale(1.05);
+}
+
+.fab-container .fab-options {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 10px;
+    pointer-events: auto;
+    z-index: 102;
+}
+
+.fab-container.active .fab-options {
+    display: flex;
+}
+
+.fab-container .fab {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.fab-container .fab:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Chat Popup Styles ---------- */
+.chat-popup {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90vw;
+    max-height: 80vh;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1001;
+    cursor: move;
+}
+
+.chat-header {
+    background-color: #3b82f6;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+}
+
+.chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.chat-list-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chat-list-item:hover {
+    background-color: #f5f5f5;
+}
+
+#newChatPopup {
+    width: 400px !important;
+}
+
+.message-sent,
+.message-received {
+    max-width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message-sent {
+    background-color: #dcf8c6;
+    margin-left: auto;
+    text-align: right;
+    border-bottom-right-radius: 0;
+}
+
+.message-received {
+    background-color: #f1f0f0;
+    margin-right: auto;
+    text-align: left;
+    border-bottom-left-radius: 0;
+}
+
+.message-sent small,
+.message-received small {
+    display: block;
+    font-size: 0.7rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.chat-footer {
+    border-top: 1px solid #ddd;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.chat-footer button {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+#emoji-btn {
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+}
+
+.chat-footer input[type="text"] {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.chat-footer button:last-child {
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.chat-footer button:last-child:hover {
+    background-color: #2563eb;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .announcement-section,
+    .contact-section,
+    .news-section {
+        padding: 40px 0 20px;
+    }
+
+    .content-wrapper {
+        padding-top: 104px !important; /* Mobile top padding for fixed header + navbar */
+    }
+
+    .home-container .content-wrapper {
+        padding-top: 0 !important;
+    }
+
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        max-width: 100% !important;
+    }
+
+    .chat-popup {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 90% !important;
+        max-height: 80vh !important;
+        cursor: default !important;
+    }
+
+    .chat-popup .chat-body {
+        max-height: calc(100% - 100px);
+        overflow-y: auto;
+    }
+
+    .search-form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+    .alumni-actions {
+        right: 15px;
+    }
+
+    .reward-card {
+        max-width: 100%;
+    }
+
+    .chat-footer {
+        flex-wrap: nowrap;
+    }
+
+    #emoji-btn {
+        font-size: 1rem;
+        width: 28px;
+        height: 28px;
+    }
+
+    .chat-footer button:last-child {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
